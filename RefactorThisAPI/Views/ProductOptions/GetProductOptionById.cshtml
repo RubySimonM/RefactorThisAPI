@@ -1,0 +1,50 @@
+﻿@model RefactorThisAPI.Models.ProductOption
+
+@{
+    ViewBag.Title = "GetProductOptionById";
+}
+
+<h2 style="text-align:center;font-weight:bold">GET PRODUCTOPTION BY ID</h2>
+<br />
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("UPDATE", "UpdateProductOption", new { id = Model.Id }) |
+    @Html.ActionLink("BACK TO PRODUCT OPTIONS", "GetAllProductOptions")
+</p>

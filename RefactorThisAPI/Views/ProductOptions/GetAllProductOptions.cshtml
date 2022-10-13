@@ -1,0 +1,60 @@
+﻿@model IEnumerable<RefactorThisAPI.Models.ProductOption>
+
+@{
+    ViewBag.Title = "GetAllProductOptions";
+}
+
+<h2 style="text-align: center; font-weight: bold">GET ALL PRODUCT OPTIONS</h2>
+<br />
+
+<p style="text-align: right; font-weight: bold; font-size:large">
+    @Html.ActionLink("CREATE NEW PRODUCT OPTION", "CreateNewProductOption")
+</p>
+<br />
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("UPDATE", "UpdateProductOption", new { id = item.Id }) |
+                @Html.ActionLink("DETAILS", "GetProductOptionById", new { id = item.Id }) |
+                @Html.ActionLink("DELETE", "DeleteProductOption", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<div>
+    Total Product Options: <h10 style="font-weight: bold;">@Model.Count()</h10>
+</div>
